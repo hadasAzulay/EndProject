@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GvGnnCvBGD0QxrQMwOKwip+kB+6ymYpEDv6f470aL0Ez2rfrMXhteWnU8hTvTVFmknSBPuVoVuAJHp9c/WxUOA==",
+  "dgSpecHash": "/Uq9Zt6k2OWXXdfCaa7IrSfYgIDPj+/Ske6ipm74oUX1LKVncXtevugBzdCsk8FUwoiv4Uvx7+ka1Mix3RNtJw==",
   "success": true,
-  "projectFilePath": "D:\\user\\Desktop\\פרוייקט גמר הדס אולאי ואביה פרחי\\MyProject1\\BLL\\BLL.csproj",
+  "projectFilePath": "D:\\user\\Desktop\\EndProject\\MyProject1\\BLL\\BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\הדס\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\הדס\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

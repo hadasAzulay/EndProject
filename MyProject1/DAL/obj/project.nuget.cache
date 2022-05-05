@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "naabmFT8Ia+asS8PUb9S2NSlvrRfUQ8RVqEuFFE23EKj+HnFvE0uPgDAwcNPMnS3s2ZnkRVBIhPrr8NlU+RQAA==",
+  "dgSpecHash": "G7DoX+IGE3/tllQL3Lzdfh/tc/m6zlwNzQjpfMoFyE8obP4ta/YSxs/smxZhT78mzHtdyYjF+m0+v6LKNVzHbQ==",
   "success": true,
-  "projectFilePath": "D:\\user\\Desktop\\פרוייקט גמר הדס אולאי ואביה פרחי\\MyProject1\\DAL\\DAL.csproj",
+  "projectFilePath": "D:\\user\\Desktop\\EndProject\\MyProject1\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\הדס\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\הדס\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
