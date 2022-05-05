@@ -1,0 +1,19 @@
+<table class="tbl">
+    <tr>
+        <th>ת.ז</th>
+        <th>שם פרטי</th>
+        <th>שם משפחה</th>
+        <th>מספר טלפון</th>
+        <th>סיסמא</th>
+ </tr>
+ <tr *ngFor="let p of this.person">
+     <th>{{p.PersonId}}</th>
+     <th>{{p.FirstName}}</th>
+     <th>{{p.LastName}}</th>
+     <th>{{p.PhoneNumber}}</th>
+     <th>{{p.Email}}</th>
+     <th>{{p.PsWord}}</th>
+
+
+ </tr>
+</table>

@@ -1,0 +1,72 @@
+.bb {
+	
+	background:url(../../assets/background1.jpg) fixed;
+  background-size: cover;
+	
+}
+.div1
+{
+  background-color: rgba(0, 0, 0, 0.103);
+}
+.span
+{
+  width:50%; 
+  height: 100%;
+  margin-left:25%;
+  margin-right:25%;
+  justify-content: center;
+  display: block;
+  background-origin: padding-box;
+  border-style: solid;
+  border-radius: 10px 5px 10px 5px ;
+}
+.d
+{
+  display: flex;
+  justify-content: center;
+}
+.b
+{
+  font-family: system-ui;
+  background:black;
+  color: white;
+  width:10%; 
+  margin-left:40%;
+  margin-right:40%;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.button1{
+
+  font-family: system-ui;
+  background:rgba(255, 0, 0, 0.712);
+  color: white;
+  text-align: center;
+  width:15%; 
+  margin-left:42.5%;
+  margin-right:42.5%;
+} 
+.div
+{
+  width:25%; 
+  height: 100%;
+  margin-left:37.5%;
+  margin-right:37.5%;
+  justify-content: center;
+  display: block;
+  background-origin: padding-box;
+  /* border-style: solid;
+  border-radius: 10px 5px 10px 5px ; */
+}
+.h1
+{
+  display: flex;
+  justify-content: center;
+}

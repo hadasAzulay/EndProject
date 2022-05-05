@@ -1,0 +1,78 @@
+<!--<div>
+<h2 class="p1">היכנס / הירשם</h2><br>
+<span class="span"><br>
+
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label> הכנס שם משמש</mat-label>
+      <input matInput placeholder="שם משמש" >
+    </mat-form-field>
+  
+   
+  </form>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>הכנס סיסמא</mat-label>
+      <span matPrefix> &nbsp;</span>
+      <input type="password" matInput placeholder=" ">
+      <mat-icon matSuffix></mat-icon>
+    </mat-form-field>
+  </form>
+  
+        <pre></pre><br>
+        <div class="d" >
+            <label for="Password">הכנס סיסמא</label><br>
+            <input type="text" name="Password" >
+        </div>
+        <pre></pre><br> 
+     <button  [routerLink]="['/personal-project']"class="button1">התחבר</button><br><br>
+     <button  [routerLink]="['']"class="button1">שכחת את הסיסמא?</button><br><br>
+
+
+     <button class="button2" [routerLink]="['/connection']">אם אינך רשום למערכת לחץ כאן</button><br><br>
+</span>
+
+</div>
+ 
+
+
+	<br> 
+	<br>
+	<form (ngSubmit)="ok()">
+ <div class="login-wrap">
+	<div class="login-html">
+		
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">אזור אישי </label>
+		<input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">?שכחת סיסמא </label>
+		
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">שם משתמש או מייל</label>
+					
+					<input id="user" type="text" class="input">
+				</div>
+				
+				<div class="group">
+					<label for="pass" class="label">סיסמא</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<input  type="submit" class="button" value=" התחבר">
+				</div>
+				<div class="hr"></div>
+			</div>
+			<div class="for-pwd-htm">
+				<div class="group">
+					<label for="user" class="label">שם משתמש או מייל</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="אפס את הסיסמה">
+				</div>
+				<div class="hr"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</form>

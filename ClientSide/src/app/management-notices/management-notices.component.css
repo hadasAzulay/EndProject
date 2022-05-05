@@ -1,0 +1,18 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  body {
+    margin:0;
+    color:#edf3ff;
+    background:#c8c8c8;
+    background:url(../../assets/rek.jpg) fixed;
+    background-size: cover;
+    font:600 16px/18px 'Open Sans',sans-serif;
+  }
+  

@@ -1,0 +1,25 @@
+C:\Users\1\Desktop\MyProject1\Entities\bin\Debug\netcoreapp3.1\Entities.deps.json
+C:\Users\1\Desktop\MyProject1\Entities\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\1\Desktop\MyProject1\Entities\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\1\Desktop\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.AssemblyReference.cache
+C:\Users\1\Desktop\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
+C:\Users\1\Desktop\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
+C:\Users\1\Desktop\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
+C:\Users\1\Desktop\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.dll
+C:\Users\1\Desktop\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
+D:\user\Desktop\פרוייקט גמר הדס אזולאי ואביה פרחי\MyProject1\Entities\bin\Debug\netcoreapp3.1\Entities.deps.json
+D:\user\Desktop\פרוייקט גמר הדס אזולאי ואביה פרחי\MyProject1\Entities\bin\Debug\netcoreapp3.1\Entities.dll
+D:\user\Desktop\פרוייקט גמר הדס אזולאי ואביה פרחי\MyProject1\Entities\bin\Debug\netcoreapp3.1\Entities.pdb
+D:\user\Desktop\פרוייקט גמר הדס אזולאי ואביה פרחי\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
+D:\user\Desktop\פרוייקט גמר הדס אזולאי ואביה פרחי\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
+D:\user\Desktop\פרוייקט גמר הדס אזולאי ואביה פרחי\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
+D:\user\Desktop\פרוייקט גמר הדס אזולאי ואביה פרחי\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.dll
+D:\user\Desktop\פרוייקט גמר הדס אזולאי ואביה פרחי\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
+D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\Entities\bin\Debug\netcoreapp3.1\Entities.deps.json
+D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\Entities\bin\Debug\netcoreapp3.1\Entities.dll
+D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\Entities\bin\Debug\netcoreapp3.1\Entities.pdb
+D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
+D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
+D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
+D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.dll
+D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
