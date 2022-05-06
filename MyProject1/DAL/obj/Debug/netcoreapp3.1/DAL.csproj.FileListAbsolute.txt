@@ -40,3 +40,18 @@ D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyPr
 D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\DAL\bin\Debug\netcoreapp3.1\Entities.pdb
 D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComplete
 D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\DAL\obj\Debug\netcoreapp3.1\DAL.genruntimeconfig.cache
+D:\user\Desktop\EndProject\MyProject1\DAL\bin\Debug\netcoreapp3.1\DAL.deps.json
+D:\user\Desktop\EndProject\MyProject1\DAL\bin\Debug\netcoreapp3.1\DAL.runtimeconfig.json
+D:\user\Desktop\EndProject\MyProject1\DAL\bin\Debug\netcoreapp3.1\DAL.runtimeconfig.dev.json
+D:\user\Desktop\EndProject\MyProject1\DAL\bin\Debug\netcoreapp3.1\DAL.dll
+D:\user\Desktop\EndProject\MyProject1\DAL\bin\Debug\netcoreapp3.1\DAL.pdb
+D:\user\Desktop\EndProject\MyProject1\DAL\bin\Debug\netcoreapp3.1\Entities.dll
+D:\user\Desktop\EndProject\MyProject1\DAL\bin\Debug\netcoreapp3.1\Entities.pdb
+D:\user\Desktop\EndProject\MyProject1\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.AssemblyReference.cache
+D:\user\Desktop\EndProject\MyProject1\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+D:\user\Desktop\EndProject\MyProject1\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
+D:\user\Desktop\EndProject\MyProject1\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+D:\user\Desktop\EndProject\MyProject1\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComplete
+D:\user\Desktop\EndProject\MyProject1\DAL\obj\Debug\netcoreapp3.1\DAL.dll
+D:\user\Desktop\EndProject\MyProject1\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
+D:\user\Desktop\EndProject\MyProject1\DAL\obj\Debug\netcoreapp3.1\DAL.genruntimeconfig.cache

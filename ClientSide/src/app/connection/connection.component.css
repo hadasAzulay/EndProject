@@ -1,13 +1,4 @@
-.bb {
-	
-	background:url(../../assets/background1.jpg) fixed;
-  background-size: cover;
-	
-}
-.div1
-{
-  background-color: rgba(0, 0, 0, 0.103);
-}
+
 .span
 {
   width:50%; 
@@ -38,12 +29,16 @@
   min-width: 150px;
   max-width: 500px;
   width: 100%;
+  width:15%; 
+  margin-left:42.5%;
+  margin-right:42.5%;
 }
 
 .example-full-width {
   width: 100%;
 }
 .button1{
+
 
   font-family: system-ui;
   background:rgba(255, 0, 0, 0.712);
