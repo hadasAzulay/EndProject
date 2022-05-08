@@ -18,7 +18,8 @@ namespace DAL.Converters
                 CheckNumber = c.CheckNumber,
                 InvoicingNumber = c.InvoicingNumber,
                 AmountBeforeVat = c.AmountBeforeVat,
-                AmountAfterVat = c.AmountAfterVat
+                AmountAfterVat = c.AmountAfterVat,
+                DateOfToday=c.DateOfToday
 
       
             };
@@ -33,8 +34,8 @@ namespace DAL.Converters
                 CheckNumber = c.CheckNumber,
                 InvoicingNumber = c.InvoicingNumber,
                 AmountBeforeVat = c.AmountBeforeVat,
-                AmountAfterVat = c.AmountAfterVat
-
+                AmountAfterVat = c.AmountAfterVat,
+                DateOfToday=c.DateOfToday
             };
         }
         public static List<Calculation> LfromEntityToTbl(List<EntitiesCalculation> lc)

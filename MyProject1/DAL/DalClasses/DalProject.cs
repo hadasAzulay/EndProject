@@ -24,6 +24,16 @@ namespace DAL.DalClasses
             db.SaveChanges();
             return getAllProjects();
         }
-      
-    }
+        public List<EntitiesProject> getProjectsByType(int id)
+        {
+            List<EntitiesProject> lp = new List<EntitiesProject>();
+            foreach(var item in db.Projects)
+            {
+                Project p = db.Projects.FirstOrDefault(x => x.TypeOfProjects == id);
+                lp.Add(ConvertersProject.fromTblToEntity(p));
+            }
+            return (lp);
+        }
+        
+        }
 }

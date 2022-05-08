@@ -20,6 +20,28 @@ namespace DAL.DalClasses
         {
             return ConvertersDailyDairy.LfromTblToEntity(db.DailyDiaries.ToList());
         }
+        public List<EntitiesDailyDairy>putDailyDairy(EntitiesDailyDairy d) 
+        {
+            db.DailyDiaries.Add(Converters.ConvertersDailyDairy.fromEntityToTbl(d));
+            db.SaveChanges();
+            return getAll();
+        }
+        public List<EntitiesDailyDairy> deleteDairyDaily(EntitiesDailyDairy d) //מקבל ENTITIES או TBL?
+        {
+            db.DailyDiaries.Remove(ConvertersDailyDairy.fromEntityToTbl(d));
+            db.SaveChanges();
+            return getAll();
+        }
+        
+        public bool GetAlerts(EntitiesDailyDairy d)
+        {
+            if (d.Notes.Contains('!')) 
+                return true;
+                return false;
+            
+        }
+
+
 
     }
 }

@@ -14,7 +14,10 @@ namespace Entities.EntitiesClasses
         public string Notes { get; set; }
         public TimeSpan BeginingHour { get; set; }
         public TimeSpan EndHour { get; set; }
-
+        public int SupplierId { get; set; }
+        public int EquipmentForDay { get; set; }
+        public int MaterialForDay { get; set; }
+        public int ToolForDay { get; set; }
 
     }
 }

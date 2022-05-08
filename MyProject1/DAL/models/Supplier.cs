@@ -10,6 +10,7 @@ namespace DAL.models
         public Supplier()
         {
             Calculations = new HashSet<Calculation>();
+            DailyDiaries = new HashSet<DailyDiary>();
             EquipmentForTools = new HashSet<EquipmentForTool>();
             MaterialsForTools = new HashSet<MaterialsForTool>();
             SupplierForTools = new HashSet<SupplierForTool>();
@@ -23,6 +24,7 @@ namespace DAL.models
         public virtual Person Cpa { get; set; }
         public virtual Person Person { get; set; }
         public virtual ICollection<Calculation> Calculations { get; set; }
+        public virtual ICollection<DailyDiary> DailyDiaries { get; set; }
         public virtual ICollection<EquipmentForTool> EquipmentForTools { get; set; }
         public virtual ICollection<MaterialsForTool> MaterialsForTools { get; set; }
         public virtual ICollection<SupplierForTool> SupplierForTools { get; set; }

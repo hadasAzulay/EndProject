@@ -20,11 +20,13 @@ namespace DAL.Converters
                 DetailsOfTheWork = d.DetailsOfTheWork,
                 Notes = d.Notes,
                 BeginingHour = d.BeginingHour,
-                EndHour = d.EndHour
-
+                EndHour = d.EndHour,
+                SupplierId = d.SupplierId,
+                EquipmentForDay = d.EquipmentForDay,
+                MaterialForDay = d.MaterialForDay,
+                ToolForDay = d.ToolForDay
             };
-            }
-        
+        }
             public static DailyDiary fromEntityToTbl(EntitiesDailyDairy d)
             {
                 return new DailyDiary()
@@ -35,7 +37,11 @@ namespace DAL.Converters
                     DetailsOfTheWork = d.DetailsOfTheWork,
                     Notes = d.Notes,
                     BeginingHour = d.BeginingHour,
-                    EndHour = d.EndHour
+                    EndHour = d.EndHour,
+                    SupplierId = d.SupplierId,
+                    EquipmentForDay = d.EquipmentForDay,
+                    MaterialForDay = d.MaterialForDay,
+                    ToolForDay = d.ToolForDay
                 };
             }
             public static List<DailyDiary> LfromEntityToTbl(List<EntitiesDailyDairy> ld)

@@ -7,6 +7,11 @@ namespace DAL.models
 {
     public partial class ToolsForDay
     {
+        public ToolsForDay()
+        {
+            DailyDiaries = new HashSet<DailyDiary>();
+        }
+
         public int ToolsForDay1 { get; set; }
         public int DailyDiary { get; set; }
         public int ToolId { get; set; }
@@ -14,5 +19,6 @@ namespace DAL.models
 
         public virtual DailyDiary DailyDiaryNavigation { get; set; }
         public virtual Tool Tool { get; set; }
+        public virtual ICollection<DailyDiary> DailyDiaries { get; set; }
     }
 }

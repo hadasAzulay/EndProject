@@ -13,7 +13,7 @@ namespace Entities.EntitiesClasses
         public string InvoicingNumber { get; set; }
         public double AmountBeforeVat { get; set; }
         public double AmountAfterVat { get; set; }
-
+        public DateTime DateOfToday { get; set; }
 
     }
 }

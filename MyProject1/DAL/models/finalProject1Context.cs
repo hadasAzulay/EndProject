@@ -233,17 +233,49 @@ namespace DAL.models
 
                 entity.Property(e => e.EndHour).HasColumnName("end_hour");
 
+                entity.Property(e => e.EquipmentForDay).HasColumnName("equipment_for_day");
+
+                entity.Property(e => e.MaterialForDay).HasColumnName("material_for_day");
+
                 entity.Property(e => e.Notes)
                     .IsUnicode(false)
                     .HasColumnName("notes");
 
                 entity.Property(e => e.ProjectId).HasColumnName("project_id");
 
+                entity.Property(e => e.SupplierId).HasColumnName("supplier_id");
+
+                entity.Property(e => e.ToolForDay).HasColumnName("tool_for_day");
+
+                entity.HasOne(d => d.EquipmentForDayNavigation)
+                    .WithMany(p => p.DailyDiaries)
+                    .HasForeignKey(d => d.EquipmentForDay)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_DailyDairytoequipmentForDay");
+
+                entity.HasOne(d => d.MaterialForDayNavigation)
+                    .WithMany(p => p.DailyDiaries)
+                    .HasForeignKey(d => d.MaterialForDay)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_DailyDairytoMaterialForDay");
+
                 entity.HasOne(d => d.Project)
                     .WithMany(p => p.DailyDiaries)
                     .HasForeignKey(d => d.ProjectId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Daily_DiaryToProject");
+
+                entity.HasOne(d => d.Supplier)
+                    .WithMany(p => p.DailyDiaries)
+                    .HasForeignKey(d => d.SupplierId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_DailyDairytoSuppliers");
+
+                entity.HasOne(d => d.ToolForDayNavigation)
+                    .WithMany(p => p.DailyDiaries)
+                    .HasForeignKey(d => d.ToolForDay)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_DailyDairytoToolForDay");
             });
 
             modelBuilder.Entity<Equipment>(entity =>

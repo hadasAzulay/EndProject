@@ -20,6 +20,12 @@ namespace DAL.DalClasses
         {
             return ConvertersEquipmentForDay.LfromTblToEntity(db.EquipmentForDays.ToList());
         }
-
+        public List<EntitiesEquipmentForDay> putEquipmentForDay(EntitiesEquipmentForDay e)
+        {
+            db.EquipmentForDays.Add(ConvertersEquipmentForDay.fromEntityToTbl(e));
+            db.SaveChanges();
+            return getAll();
+        }
+     
     }
 }

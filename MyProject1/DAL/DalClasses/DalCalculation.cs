@@ -31,7 +31,7 @@ namespace DAL.DalClasses
             }
             return lc;
         }
-        //search calculation with projectID
+        //search calculation with supplierID
         public List<EntitiesCalculation> GetCalculationsBySupp(int supplierID)
         {
             List<EntitiesCalculation> lc = new List<EntitiesCalculation>();
@@ -57,10 +57,19 @@ namespace DAL.DalClasses
             db.SaveChanges();
             return getAll();
         }
-       
-
-
-
-
+        //search calculation by date
+        public EntitiesCalculation GetCalculationbyDate(DateTime d)
+        {
+            Calculation c = db.Calculations.FirstOrDefault(x => x.DateOfToday==d);
+            if (c != null)
+                return ConverterCalculation.fromTblToEntity(c);
+            return null;
         }
+      
+
+
+
+
+
+    }
 }
