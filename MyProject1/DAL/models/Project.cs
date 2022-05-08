@@ -23,7 +23,9 @@ namespace DAL.models
         public string Adress { get; set; }
         public DateTime BeginingDate { get; set; }
         public DateTime EndDate { get; set; }
+        public int? TypeOfProjects { get; set; }
 
+        public virtual TypesOfProject TypeOfProjectsNavigation { get; set; }
         public virtual ICollection<Apartment> Apartments { get; set; }
         public virtual ICollection<Calculation> Calculations { get; set; }
         public virtual ICollection<Costumer> Costumers { get; set; }

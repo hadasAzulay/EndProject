@@ -18,5 +18,13 @@ namespace BLL.Classes
         {
             return dal.getAll();
         }
+        public List<EntitiesApartment> getAllApartmentsOfPerson(int pId) 
+        {
+            return dal.getAllApartmentsOfPerson(pId);
+        }
+      public List<EntitiesApartment> deleteApartmentAftYear(DateTime d) 
+        { return dal.deleteApartmentAftYear(d);
+        }
+    
     }
 }

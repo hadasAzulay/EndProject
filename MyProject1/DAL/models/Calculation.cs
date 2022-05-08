@@ -14,6 +14,7 @@ namespace DAL.models
         public string InvoicingNumber { get; set; }
         public double AmountBeforeVat { get; set; }
         public double AmountAfterVat { get; set; }
+        public DateTime DateOfToday { get; set; }
 
         public virtual Supplier Doubt { get; set; }
         public virtual Project Project { get; set; }

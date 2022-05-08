@@ -11,6 +11,7 @@ namespace DAL.models
         {
             Contractors = new HashSet<Contractor>();
             Costumers = new HashSet<Costumer>();
+            Cpas = new HashSet<Cpa>();
             SupplierCpas = new HashSet<Supplier>();
             SupplierPeople = new HashSet<Supplier>();
             WorkerPeople = new HashSet<Worker>();
@@ -26,6 +27,7 @@ namespace DAL.models
         public virtual Worker WorkerWorkerNavigation { get; set; }
         public virtual ICollection<Contractor> Contractors { get; set; }
         public virtual ICollection<Costumer> Costumers { get; set; }
+        public virtual ICollection<Cpa> Cpas { get; set; }
         public virtual ICollection<Supplier> SupplierCpas { get; set; }
         public virtual ICollection<Supplier> SupplierPeople { get; set; }
         public virtual ICollection<Worker> WorkerPeople { get; set; }

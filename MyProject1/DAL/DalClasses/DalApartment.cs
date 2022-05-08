@@ -16,19 +16,36 @@ namespace DAL.DalClasses
         {
             this.db = db;
         }
+        //getAll 
         public List<EntitiesApartment> getAll()
         {
             return ConverterAparment.ToDalApartmentList(db.Apartments.ToList());
         }
+        //
+        //get All Apartments Of Person
         public List<EntitiesApartment> getAllApartmentsOfPerson(int pId)
         {
-            Apartment a = db.Apartments.FirstOrDefault(x => x.CostumerId == pId);
-            if (a != null)
+            List<EntitiesApartment> la = new List<EntitiesApartment>();
+                foreach(var item in db.Apartments) 
             {
+                EntitiesApartment a = ConverterAparment.ToDalApartment(db.Apartments.FirstOrDefault(x => x.CostumerId == pId));
+                la.Add(a);
             }
+
+            if (la == null)
             return null;
+            return la;
         }
-       
+        //delete apartment after year
+        public List<EntitiesApartment> deleteApartmentAftYear(DateTime d)
+        {
+            foreach (var item in db.Apartments)
+            {
+                Apartment a = db.Apartments.FirstOrDefault(apr => apr.KeyGetDate.Year + 1 == d.Year && apr.KeyGetDate.Month == d.Month && apr.KeyGetDate.Day == d.Day);
+                db.Apartments.Remove(a);
+            }
+            return getAll();
+        }
     }
 
 }

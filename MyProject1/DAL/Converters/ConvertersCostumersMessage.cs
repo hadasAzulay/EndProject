@@ -16,7 +16,7 @@ using Entities.EntitiesClasses;
                 MessageId =c.MessageId,
                 ProjectId=c.ProjectId,
                 Discraption=c.Discraption,
-                MessageStatus=c.MessageStatus
+               
             };
 
         }
@@ -27,7 +27,7 @@ using Entities.EntitiesClasses;
                 MessageId = c.MessageId,
                 ProjectId = c.ProjectId,
                 Discraption = c.Discraption,
-                MessageStatus = c.MessageStatus
+            
 
             };
         }

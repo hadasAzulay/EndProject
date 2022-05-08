@@ -23,5 +23,16 @@ namespace WebApplication2.Controllers
         {
             return bll.getAll();
         }
+        [Route("GetAll")]
+        public List<EntitiesApartment> getAllApartmentsOfPerson(int pId)
+        {
+            return bll.getAllApartmentsOfPerson(pId);
+        }
+        [Route("GetAll")]
+        public List<EntitiesApartment> deleteApartmentAftYear(DateTime d)
+        {
+            return bll.deleteApartmentAftYear(d);
+        }
+
     }
 }

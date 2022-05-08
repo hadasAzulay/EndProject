@@ -7,7 +7,10 @@ namespace BLL.iClasses
 {
    public interface IbllApartment
     {
-        public List<EntitiesApartment> getAll();
+        List<EntitiesApartment> getAll();
+        List<EntitiesApartment> getAllApartmentsOfPerson(int pId);
+        List<EntitiesApartment> deleteApartmentAftYear(DateTime d);
+
 
     }
 }

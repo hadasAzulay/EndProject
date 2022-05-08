@@ -22,6 +22,7 @@ namespace DAL.models
         public virtual DbSet<Contractor> Contractors { get; set; }
         public virtual DbSet<Costumer> Costumers { get; set; }
         public virtual DbSet<CostumersMessage> CostumersMessages { get; set; }
+        public virtual DbSet<Cpa> Cpas { get; set; }
         public virtual DbSet<DailyDiary> DailyDiaries { get; set; }
         public virtual DbSet<Equipment> Equipment { get; set; }
         public virtual DbSet<EquipmentForDay> EquipmentForDays { get; set; }
@@ -38,6 +39,7 @@ namespace DAL.models
         public virtual DbSet<SupplierForTool> SupplierForTools { get; set; }
         public virtual DbSet<Tool> Tools { get; set; }
         public virtual DbSet<ToolsForDay> ToolsForDays { get; set; }
+        public virtual DbSet<TypesOfProject> TypesOfProjects { get; set; }
         public virtual DbSet<Worker> Workers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -94,6 +96,10 @@ namespace DAL.models
                     .HasMaxLength(20)
                     .IsUnicode(false)
                     .HasColumnName("check_number");
+
+                entity.Property(e => e.DateOfToday)
+                    .HasColumnType("date")
+                    .HasColumnName("date_of_today");
 
                 entity.Property(e => e.DoubtId).HasColumnName("doubt_id");
 
@@ -181,8 +187,6 @@ namespace DAL.models
                     .IsUnicode(false)
                     .HasColumnName("discraption");
 
-                entity.Property(e => e.MessageStatus).HasColumnName("message_status");
-
                 entity.Property(e => e.ProjectId).HasColumnName("project_id");
 
                 entity.HasOne(d => d.Project)
@@ -190,6 +194,21 @@ namespace DAL.models
                     .HasForeignKey(d => d.ProjectId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Costumers_MessageToProject");
+            });
+
+            modelBuilder.Entity<Cpa>(entity =>
+            {
+                entity.ToTable("CPA");
+
+                entity.Property(e => e.CpaId).HasColumnName("CPA_id");
+
+                entity.Property(e => e.PersonId).HasColumnName("Person_id");
+
+                entity.HasOne(d => d.Person)
+                    .WithMany(p => p.Cpas)
+                    .HasForeignKey(d => d.PersonId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CPAsToPeople");
             });
 
             modelBuilder.Entity<DailyDiary>(entity =>
@@ -488,6 +507,13 @@ namespace DAL.models
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("project_name");
+
+                entity.Property(e => e.TypeOfProjects).HasColumnName("typeOfProjects");
+
+                entity.HasOne(d => d.TypeOfProjectsNavigation)
+                    .WithMany(p => p.Projects)
+                    .HasForeignKey(d => d.TypeOfProjects)
+                    .HasConstraintName("FK_ProjectsToTypeProjects");
             });
 
             modelBuilder.Entity<Supplier>(entity =>
@@ -583,6 +609,22 @@ namespace DAL.models
                     .HasForeignKey(d => d.ToolId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Tools_For_DayToTool");
+            });
+
+            modelBuilder.Entity<TypesOfProject>(entity =>
+            {
+                entity.HasKey(e => e.TypesOfProjects)
+                    .HasName("PK__Types_Of__3C69814421989184");
+
+                entity.ToTable("Types_Of_Projects");
+
+                entity.Property(e => e.TypesOfProjects).HasColumnName("Types_Of_Projects");
+
+                entity.Property(e => e.TypeProjectName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("Type_Project_Name");
             });
 
             modelBuilder.Entity<Worker>(entity =>

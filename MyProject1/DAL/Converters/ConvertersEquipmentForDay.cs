@@ -6,7 +6,7 @@ using Entities.EntitiesClasses;
 
 namespace DAL.Converters
 {
-    class ConvertersEquipmentForDay
+    public class ConvertersEquipmentForDay
     {
         public static EntitiesEquipmentForDay fromTblToEntity(EquipmentForDay e)
         {

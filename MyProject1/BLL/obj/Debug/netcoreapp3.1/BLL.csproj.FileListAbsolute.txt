@@ -35,3 +35,17 @@ D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyPr
 D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete
 D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\BLL\obj\Debug\netcoreapp3.1\BLL.dll
 D:\user\Desktop\פרוייקט גמר הדס אולאי ואביה פרחי\MyProject1\BLL\obj\Debug\netcoreapp3.1\BLL.pdb
+D:\user\Desktop\EndProject\MyProject1\BLL\bin\Debug\netcoreapp3.1\BLL.deps.json
+D:\user\Desktop\EndProject\MyProject1\BLL\bin\Debug\netcoreapp3.1\BLL.dll
+D:\user\Desktop\EndProject\MyProject1\BLL\bin\Debug\netcoreapp3.1\BLL.pdb
+D:\user\Desktop\EndProject\MyProject1\BLL\bin\Debug\netcoreapp3.1\DAL.dll
+D:\user\Desktop\EndProject\MyProject1\BLL\bin\Debug\netcoreapp3.1\Entities.dll
+D:\user\Desktop\EndProject\MyProject1\BLL\bin\Debug\netcoreapp3.1\DAL.pdb
+D:\user\Desktop\EndProject\MyProject1\BLL\bin\Debug\netcoreapp3.1\Entities.pdb
+D:\user\Desktop\EndProject\MyProject1\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.AssemblyReference.cache
+D:\user\Desktop\EndProject\MyProject1\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
+D:\user\Desktop\EndProject\MyProject1\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs
+D:\user\Desktop\EndProject\MyProject1\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache
+D:\user\Desktop\EndProject\MyProject1\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete
+D:\user\Desktop\EndProject\MyProject1\BLL\obj\Debug\netcoreapp3.1\BLL.dll
+D:\user\Desktop\EndProject\MyProject1\BLL\obj\Debug\netcoreapp3.1\BLL.pdb
