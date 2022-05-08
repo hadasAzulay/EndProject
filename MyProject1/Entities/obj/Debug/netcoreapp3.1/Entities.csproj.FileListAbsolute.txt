@@ -31,3 +31,4 @@ D:\user\Desktop\EndProject\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.
 D:\user\Desktop\EndProject\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
 D:\user\Desktop\EndProject\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.dll
 D:\user\Desktop\EndProject\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
+D:\user\Desktop\EndProject\MyProject1\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.AssemblyReference.cache

@@ -23,10 +23,19 @@ namespace DAL.DalClasses
             db.SaveChanges();
             return getAll();
         }
+        //delete
+        public List<EntitiesToolsForDay> DeleteDalToolsForDay(EntitiesToolsForDay t)
+        {
+            db.ToolsForDays.Add(ConvertersToolsForDay.fromEntityToTbl(t));
+            db.SaveChanges();
+            return getAll();
+        }
+
         //getAll
         public List<EntitiesToolsForDay> getAll()
             {
                 return ConvertersToolsForDay.LfromTblToEntity(db.ToolsForDays.ToList());
             }
         }
+
 }
