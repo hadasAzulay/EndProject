@@ -8,7 +8,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { MarketingProjecsComponent } from './marketing-projecs/marketing-projecs.component';
 import { PopulatedProjecsComponent } from './populated-projecs/populated-projecs.component';
 import { PricePerOccupantComponent } from './price-per-occupant/price-per-occupant.component';
-import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PersonalProjectComponent } from './personal-project/personal-project.component';
 import { PersonalProgressScheduleComponent } from './personal-progress-schedule/personal-progress-schedule.component';
@@ -24,6 +23,7 @@ import { TrackingLogComponent } from './tracking-log/tracking-log.component';
 import { CalculationTableComponent } from './calculation-table/calculation-table.component';
 import { ListOfTenantsComponent } from './list-of-tenants/list-of-tenants.component';
 import { ProgressScheduleComponent } from './progress-schedule/progress-schedule.component';
+import { ProjectsInProcessComponent } from './projects-in-process/projects-in-process.component';
 
 
 
@@ -45,10 +45,11 @@ const routes: Routes = [
   { path:'YearChecked' ,component:YearCheckedComponent },
   { path:'Personal-File' ,component:PersonalFileComponent },
   { path:'Personal-projects' ,component:PersonalProjectsComponent },
-  { path:'ProjProcManaj' ,component:ProjProcManajComponent },
-  { path:'Contractors' ,component:ContractorsComponent },
-  { path:'Suppliers' ,component:SuppliersComponent },
-  { path:'Documents' ,component:DocumentsComponent },
+  { path:'manager/projects' ,component:ProjectsInProcessComponent },
+  { path:'manager/projects/:project' ,component:ProjProcManajComponent },
+  { path:'manager/contractors' ,component:ContractorsComponent },
+  { path:'manager/suppliers' ,component:SuppliersComponent },
+  { path:'manager/documents' ,component:DocumentsComponent },
   { path:'TrackingLog' ,component:TrackingLogComponent },
   { path:'CalculationTable' ,component:  CalculationTableComponent},
   { path:'ListOfTenants' ,component:  ListOfTenantsComponent},

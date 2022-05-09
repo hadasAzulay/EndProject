@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsInProcessComponent implements OnInit {
 
+  projId: number = 1;
+
   constructor() { }
 
   ngOnInit(): void {
