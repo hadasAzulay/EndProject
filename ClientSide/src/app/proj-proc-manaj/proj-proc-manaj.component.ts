@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-proj-proc-manaj',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjProcManajComponent implements OnInit {
 
-  constructor() { }
+  projId: number = 1;
+
+  constructor(public activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activeRoute.params.subscribe(p=>{
+      this.projId = p['project'];
+    });
   }
 
 }

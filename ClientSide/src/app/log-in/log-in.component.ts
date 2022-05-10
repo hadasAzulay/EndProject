@@ -3,8 +3,8 @@ import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { People } from '../classes/people';
 import { PeopleService } from '../services/people.service';
-import {ErrorStateMatcher} from '@angular/material/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 
 // import { Router } from '@angular/router';
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -21,23 +21,22 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 
 export class LogInComponent implements OnInit {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  checkoutForm: FormGroup;
+  person: People;
 
+  constructor(public pSer: PeopleService, public router: Router) { }
 
-checkoutForm:FormGroup
-  constructor(public pSer:PeopleService,public router:Router) { }
-person:People
   ngOnInit(): void {
   }
-ok()
-{
-this.pSer.getByMailAndPas(this.person.Email,this.person.PsWord).subscribe(
-  data=>{this.pSer.people=data;this.router.navigate(['/personal-project'])
-},
-  err=>{ alert("no")}
-)
-}
-}
-function connection() {
-  throw new Error('Function not implemented.');
+
+  login() {
+    this.pSer.getByMailAndPas(this.person.Email, this.person.PsWord).subscribe(
+      data => {
+        this.pSer.people = data;
+        this.router.navigate(['/personal-project']);
+      },
+      err => { alert("no") }
+    )
+  }
 }
 
