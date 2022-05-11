@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Projects } from '../classes/projects';
 
 @Component({
   selector: 'app-projects-in-process',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsInProcessComponent implements OnInit {
 
-  projId: number = 1;
+  projects: Projects[];
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

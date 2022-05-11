@@ -28,32 +28,48 @@ import { ManagerGuard } from './guards/manager.guard';
 
 
 const routes: Routes = [
-  { path: 'manager', component: MainManagerComponent, canActivate: [ManagerGuard] },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'log-in', component: LogInComponent },
-  { path: 'projects', component: ProjectsComponent },
+  { path: 'register', redirectTo: 'connection', pathMatch: 'full' },
+  {
+    path: 'projects', children: [
+      { path: '', component: ProjectsComponent },
+      { path: 'marketing', component: MarketingProjecsComponent },
+      { path: 'populated', component: PopulatedProjecsComponent },
+      { path: 'price-per-occupant', component: PricePerOccupantComponent },
+    ]
+  },
   { path: 'connection', component: ConnectionComponent },
   { path: 'about', component: AboutUsComponent },
-  { path: 'MarketingProjecs', component: MarketingProjecsComponent },
-  { path: 'PopulatedProjecs', component: PopulatedProjecsComponent },
-  { path: 'pricePerOccupant', component: PricePerOccupantComponent },
   { path: 'personal-project', component: PersonalProjectComponent },
   { path: 'Personal-progressSchedule', component: PersonalProgressScheduleComponent },
   { path: 'anagement-notices', component: ManagementNoticesComponent },
   { path: 'YearChecked', component: YearCheckedComponent },
   { path: 'Personal-File', component: PersonalFileComponent },
   { path: 'Personal-projects', component: PersonalProjectsComponent },
-  { path: 'manager/projects', component: ProjectsInProcessComponent, canActivate: [ManagerGuard] },
-  { path: 'manager/projects/:project', component: ProjProcManajComponent, canActivate: [ManagerGuard] },
-  { path: 'manager/contractors', component: ContractorsComponent, canActivate: [ManagerGuard] },
-  { path: 'manager/suppliers', component: SuppliersComponent, canActivate: [ManagerGuard] },
-  { path: 'manager/documents', component: DocumentsComponent, canActivate: [ManagerGuard] },
-  { path: 'manager/projects/:project/tracking-log', component: TrackingLogComponent, canActivate: [ManagerGuard] },
-  { path: 'manager/projects/:project/calculation-table', component: CalculationTableComponent, canActivate: [ManagerGuard] },
-  { path: 'manager/projects/:project/teanants-list', component: ListOfTenantsComponent, canActivate: [ManagerGuard] },
-  { path: 'manager/projects/:project/progress-schedule', component: ProgressScheduleComponent, canActivate: [ManagerGuard] },
-
+  {
+    path: 'manager', children: [
+      { path: '', component: MainManagerComponent, canActivate: [ManagerGuard] },
+      {
+        path: 'projects', children: [
+          { path: '', component: ProjectsInProcessComponent, canActivate: [ManagerGuard] },
+          {
+            path: ':project', children: [
+              { path: '', component: ProjProcManajComponent, canActivate: [ManagerGuard] },
+              { path: 'tracking-log', component: TrackingLogComponent, canActivate: [ManagerGuard] },
+              { path: 'calculation-table', component: CalculationTableComponent, canActivate: [ManagerGuard] },
+              { path: 'teanants-list', component: ListOfTenantsComponent, canActivate: [ManagerGuard] },
+              { path: 'progress-schedule', component: ProgressScheduleComponent, canActivate: [ManagerGuard] },
+            ]
+          }
+        ]
+      },
+      { path: 'contractors', component: ContractorsComponent, canActivate: [ManagerGuard] },
+      { path: 'suppliers', component: SuppliersComponent, canActivate: [ManagerGuard] },
+      { path: 'documents', component: DocumentsComponent, canActivate: [ManagerGuard] }
+    ]
+  },
 ];
 
 @NgModule({

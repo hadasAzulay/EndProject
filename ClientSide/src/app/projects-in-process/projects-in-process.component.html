@@ -1,2 +1,6 @@
 <h2>פרוקיטים בתהליך בהרשאת מנהל</h2>
-<a class="nav-link" [routerLink]="['./',projId]">פרויקט {{projId}}</a>
+<ul>
+    <li *ngFor="let p of projects">
+        <a class="nav-link" [routerLink]="['./',p.ProjectId]">פרויקט {{p.ProjectId}} - {{p.ProjectName}}</a>
+    </li>
+</ul>
