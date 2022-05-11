@@ -32,19 +32,20 @@ namespace DAL.DalClasses
             db.SaveChanges();
             return getAll();
         }
-        //???
+        
         public bool GetAlerts(EntitiesDailyDairy d)
         {
             if (d.Notes.Contains('$')) 
                 return true;
                 return false;
             
-        } //????
-        public float GetHoursOfWork(EntitiesDailyDairy e)
+        } 
+
+        public TimeSpan GetHoursOfWork(EntitiesDailyDairy e)
         {
             TimeSpan tStart = e.BeginingHour;
             TimeSpan tEnd = e.EndHour;
-            return ((tEnd.Hours - tStart.Hours)+(tEnd.Minutes-tStart.Minutes));
+            return tStart-tEnd;
         }
 
 

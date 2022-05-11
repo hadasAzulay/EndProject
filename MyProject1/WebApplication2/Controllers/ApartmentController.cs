@@ -18,17 +18,17 @@ namespace WebApplication2.Controllers
         {
             bll = Bll;
         }
-        [Route("GetAll")]
+        [HttpGet("GetAll")]
         public ActionResult<List<EntitiesApartment>> getAll()
         {
             return bll.getAll();
         }
-        [Route("GetAll")]
+        [HttpGet("GetgetAllApartmentsOfPerson/{Id}")]
         public List<EntitiesApartment> getAllApartmentsOfPerson(int pId)
         {
             return bll.getAllApartmentsOfPerson(pId);
         }
-        [Route("GetAll")]
+        [HttpDelete("deleteApartmentAftYear/{date}")]
         public List<EntitiesApartment> deleteApartmentAftYear(DateTime d)
         {
             return bll.deleteApartmentAftYear(d);

@@ -11,5 +11,6 @@ namespace BLL.iClasses
         List<EntitiesPerson> getAll();
         List<EntitiesPerson> putPerson(EntitiesPerson p);
         EntitiesPerson getPersonByEmailAndPas(string email, string pass);
+        List<EntitiesPerson> updatePerson(EntitiesPerson p);
     }
 }

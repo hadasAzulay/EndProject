@@ -54,18 +54,9 @@ namespace DAL.DalClasses
 
             }
             return null;
-        }
-        public EntitiesPerson UpdateUser(EntitiesPerson user)//ch
-        {
-            Person userToUpdate = db.People.FirstOrDefault(x => x.Email.Equals(user.Email));
-            //   userToUpdate = Convert.UserConvert.UserToModel(user);
-            db.People.Update(userToUpdate);
-            return ConvertersPerson.fromTblToEntity(userToUpdate);
 
 
         }
-
-
     }
 }
  

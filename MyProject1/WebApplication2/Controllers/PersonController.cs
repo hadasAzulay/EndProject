@@ -34,5 +34,9 @@ namespace WebApplication2.Controllers
         {
             return PBll.getPersonByEmailAndPas(email,pass);
         }
+        public List<EntitiesPerson> updatePerson(EntitiesPerson p)
+        {
+            return PBll.updatePerson(p);
+        }
     }
 }

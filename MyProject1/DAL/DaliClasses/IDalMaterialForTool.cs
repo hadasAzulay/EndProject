@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.EntitiesClasses;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

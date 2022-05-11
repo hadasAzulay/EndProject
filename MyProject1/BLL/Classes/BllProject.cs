@@ -18,5 +18,15 @@ namespace BLL.Classes
         {
            return pDal.getAllProjects();
         }
+
+        public List<EntitiesProject> getProjectsByType(int id)
+        {
+            return pDal.getProjectsByType(id);
+        }
+
+        public List<EntitiesProject> putProject(EntitiesProject p)
+        {
+            return pDal.putProject(p);
+        }
     }
 }

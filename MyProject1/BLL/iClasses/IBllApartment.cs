@@ -12,5 +12,6 @@ namespace BLL.iClasses
         List<EntitiesApartment> deleteApartmentAftYear(DateTime d);
 
 
+
     }
 }

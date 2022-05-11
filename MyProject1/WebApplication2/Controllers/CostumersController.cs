@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BLL.iClasses;
+using Entities.EntitiesClasses;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,5 +13,22 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class CostumersController : ControllerBase
     {
+
+        IBllCostumer bll;
+        public CostumersController(IBllCostumer Bll)
+        {
+            bll = Bll;
+        }
+        [HttpGet("getByid")]
+        public List<EntitiesCostumer> getAll()
+        {
+            return bll.getAll();
+        }
+        [HttpPut("putCostumer/{costumer}")]
+        public List<EntitiesCostumer> putCostumer(EntitiesCostumer c)
+        {
+            return bll.putCostumer(c);
+        }
     }
 }
+

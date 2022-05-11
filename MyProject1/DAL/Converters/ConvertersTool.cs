@@ -6,7 +6,7 @@ using Entities.EntitiesClasses;
 
 namespace DAL.Converters
 {
-    class ConvertersTool
+  public  class ConvertersTool
     {
         public static EntitiesTool fromTblToEntity(Tool t)
         {

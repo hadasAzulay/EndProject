@@ -25,6 +25,7 @@ namespace DAL.DalClasses
         //get All Apartments Of Person
         public List<EntitiesApartment> getAllApartmentsOfPerson(int pId)
         {
+            List<Apartment> l = db.Apartments.Where(x => x.CostumerId == pId).ToList();
             List<EntitiesApartment> la = new List<EntitiesApartment>();
                 foreach(var item in db.Apartments) 
             {

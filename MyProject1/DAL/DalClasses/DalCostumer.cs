@@ -25,6 +25,7 @@ namespace DAL.DalClasses
         {
             return ConvertersCostumer.LfromTblToEntity(db.Costumers.ToList());
         }
+
         public List<EntitiesCostumer> putCostumer(EntitiesCostumer c)
         {
             db.Costumers.Add(ConvertersCostumer.fromEntityToTbl(c));

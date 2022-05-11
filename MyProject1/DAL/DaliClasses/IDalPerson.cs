@@ -7,9 +7,10 @@ namespace DAL.DaliClasses
 {
  public  interface IDalPerson
     {
-        //פונקציה המחזירה את כל האנשים
+        
         List<EntitiesPerson> getAll();
         List<EntitiesPerson> putPerson(EntitiesPerson p);
         EntitiesPerson getPersonByEmailAndPas(string email, string pass);
+        List<EntitiesPerson> updatePerson(EntitiesPerson p);
     }
 }

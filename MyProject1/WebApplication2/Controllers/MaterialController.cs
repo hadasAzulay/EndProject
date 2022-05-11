@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BLL.iClasses;
+using Entities.EntitiesClasses;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,5 +13,23 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class MaterialController : ControllerBase
     {
+        IBllMaterial bll;
+        public MaterialController(IBllMaterial Bll)
+        {
+            bll = Bll;
+        }
+        public List<EntitiesMaterial> getAll()
+        {
+            return bll.getAll();
+        }
+        public List<EntitiesMaterial> PutMaterial(EntitiesMaterial m)
+        {
+            return bll.PutMaterial(m);
+        }
+        public List<EntitiesMaterial> deleteMaterial(EntitiesMaterial m)
+        {
+            return bll.deleteMaterial(m);
+        }
+
     }
 }

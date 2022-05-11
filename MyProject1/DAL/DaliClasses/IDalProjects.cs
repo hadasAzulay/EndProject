@@ -9,5 +9,6 @@ namespace DAL.DaliClasses
     {
         List<EntitiesProject> getAllProjects();
         List<EntitiesProject> putProject(EntitiesProject p);
+        List<EntitiesProject> getProjectsByType(int id);
     }
 }

@@ -21,15 +21,24 @@ namespace BLL.Classes
         }
 
 
-        List<EntitiesPerson> IBllPerson.putPerson(EntitiesPerson p)
+        public List <EntitiesPerson> putPerson(EntitiesPerson p)
         {
             return pDal.putPerson(p);
         }
 
 
-        EntitiesPerson IBllPerson.getPersonByEmailAndPas(string email, string pass)
+        public EntitiesPerson getPersonByEmailAndPas(string email, string pass)
         {
             return pDal.getPersonByEmailAndPas(email,pass);
         }
+
+    
+          
+
+        public List<EntitiesPerson> updatePerson(EntitiesPerson p)
+        {
+                return pDal.updatePerson(p);
+            }
+        }
     }
-}
+    

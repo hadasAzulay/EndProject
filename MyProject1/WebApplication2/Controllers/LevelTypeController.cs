@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BLL.iClasses;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,10 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class LevelTypeController : ControllerBase
     {
+        IBllLevelType bll;
+        public LevelTypeController(IBllLevelType Bll)
+        {
+            bll = Bll;
+        }
     }
 }

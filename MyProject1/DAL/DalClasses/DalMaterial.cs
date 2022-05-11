@@ -20,5 +20,21 @@ namespace DAL.DalClasses
         {
             return ConvertersMaterial.LfromTblToEntity(db.Materials.ToList());
         }
+        //Add
+
+        public List<EntitiesMaterial> PutMaterial(EntitiesMaterial m)
+        {
+            db.Materials.Add(ConvertersMaterial.fromEntityToTbl(m));
+            db.SaveChanges();
+            return getAll();
+        }
+        //delete
+
+        public List<EntitiesMaterial> deleteMaterial(EntitiesMaterial m)
+        {
+            db.Materials.Remove(ConvertersMaterial.fromEntityToTbl(m));
+            db.SaveChanges();
+            return getAll();
+        }
     }
 }

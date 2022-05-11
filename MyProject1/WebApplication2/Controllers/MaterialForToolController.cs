@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BLL.iClasses;
+using Entities.EntitiesClasses;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,5 +13,10 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class MaterialForToolController : ControllerBase
     {
+        IBllMaterialForTool bll;
+        public MaterialForToolController(IBllMaterialForTool Bll)
+        {
+            bll = Bll;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BLL.iClasses;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,11 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class CostumersMessageController : ControllerBase
     {
+
+        IBllCostumersMessage bll;
+        public CostumersMessageController(IBllCostumersMessage Bll)
+        {
+            bll = Bll;
+        }
     }
 }

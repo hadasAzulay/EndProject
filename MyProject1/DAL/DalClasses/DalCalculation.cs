@@ -21,7 +21,8 @@ namespace DAL.DalClasses
             {
                 return ConverterCalculation.LfromTblToEntity(db.Calculations.ToList());
             }
-            //search calculation with projectID
+        //search calculation with projectID
+       
         public List<EntitiesCalculation> GetCalculationsOfProject(int proId) 
         {
             List < EntitiesCalculation > lc = new List<EntitiesCalculation>();
@@ -43,6 +44,7 @@ namespace DAL.DalClasses
             return lc;
         }
         //search calculation by check number
+       
         public EntitiesCalculation GetCalculationbyCheckNu(string NumberCheck)
         {
             Calculation c = db.Calculations.FirstOrDefault(x => x.CheckNumber == NumberCheck);
@@ -51,6 +53,7 @@ namespace DAL.DalClasses
             return null;
         }
         //add calculattion
+      
         public List<EntitiesCalculation> putCalculation(EntitiesCalculation c) 
        {
             db.Add(ConverterCalculation.fromEntityToTbl(c));
@@ -58,6 +61,7 @@ namespace DAL.DalClasses
             return getAll();
         }
         //search calculation by date
+    
         public EntitiesCalculation GetCalculationbyDate(DateTime d)
         {
             Calculation c = db.Calculations.FirstOrDefault(x => x.DateOfToday==d);
@@ -65,11 +69,7 @@ namespace DAL.DalClasses
                 return ConverterCalculation.fromTblToEntity(c);
             return null;
         }
-      
 
-
-
-
-
+       
     }
 }
