@@ -20,7 +20,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class ConnectionComponent implements OnInit {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-
+  phoneFormControl = new FormControl('', [ Validators.pattern('05[0-8]-[0-9]{7}')]);
+  
   matcher = new MyErrorStateMatcher();
   constructor(public pSer:PeopleService, public router:Router) { }
   person:People

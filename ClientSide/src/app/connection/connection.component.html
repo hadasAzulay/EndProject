@@ -1,67 +1,109 @@
+<div class="container h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-lg-12 col-xl-11">
+      <div class="card text-black" style="border-radius: 25px;">
+        <div class="card-body p-md-5">
+          <div class="row justify-content-center">
 
-<div class="div1">
-  
-  <br>
-  <br>
-  <div>
-    <p>
-    חברת יהודה פינקו בנין ופיתוח<br>
-כתובת: יבנה 5 מיקוד: 26382<br>
-קרית מוצקין<br>
-מספר טלפון:<br>
-04-8704313 פקס: 04-8717360<br>
-</p>
+            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center overflow-hidden">
+              <img src="assets\images\p5.jpg" class="h-100" alt="Sample image">
+            </div>
 
+            <div class="col-md-10 col-lg-6 col-xl-5">
+              <h2 class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">הצטרף אלינו</h2>
+
+              <form class="mx-1 mx-md-4">
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="form-outline flex-fill mb-0">
+                    <input type="text" id="firstName" placeholder="הכנס שם פרטי" class="form-control" />
+                    <label class="form-label" for="firstName">שם פרטי</label>
+                  </div>
+                  <i class="fa fa-user fa-lg ms-3 fa-fw"></i>
+                </div>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="form-outline flex-fill mb-0">
+                    <input type="text" id="lastName" placeholder="הכנס שם משפחה" class="form-control" />
+                    <label class="form-label" for="lastName">שם משפחה</label>
+                  </div>
+                  <i class="fa fa-user-plus fa-lg ms-3 fa-fw"></i>
+                </div>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="form-outline flex-fill mb-0">
+                    <input type="phone" id="phone" placeholder="050-1234567" class="form-control" />
+                    <label class="form-label" for="phone">טלפון</label>
+                    <mat-error *ngIf="phoneFormControl.hasError('phone')">
+                      אנא הכנס מספר טלפון נכון
+                    </mat-error>
+                  </div>
+                  <i class="fa fa-phone fa-lg ms-3 fa-fw"></i>
+                </div>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="form-outline flex-fill mb-0">
+                    <input type="email" id="email" placeholder="pat@example.com" class="form-control" />
+                    <label class="form-label" for="email">אימייל</label>
+                    <div>
+                      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        אנא הכנס כתובת דואר אלקטרוני נכונה
+                      </mat-error>
+                      <mat-error *ngIf="emailFormControl.hasError('required')">
+                        כתובת מייל <strong>נדרשת</strong>
+                      </mat-error>
+                    </div>
+                  </div>
+                  <i class="fa fa-envelope fa-lg ms-3 fa-fw"></i>
+                </div>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="form-outline flex-fill mb-0">
+                    <input type="password" id="psw" class="form-control" />
+                    <label class="form-label" for="psw">סיסמה</label>
+                  </div>
+                  <i class="fa fa-lock fa-lg ms-3 fa-fw"></i>
+                </div>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="form-outline flex-fill mb-0">
+                    <input type="password" id="psw2" class="form-control" />
+                    <label class="form-label" for="psw2">אישור סיסמה</label>
+                  </div>
+                  <i class="fa fa-key fa-lg ms-3 fa-fw"></i>
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                  <label class="form-check-label" for="form2Example3">
+                    אני מסכימ/ה עם ה <a href="#!">תקנון וכללי השימוש</a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                  <button type="button" class="btn btn-primary btn-lg">הרשם</button>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <h1  class="h1" style="font-size: 30px;"> הצטרף אלינו</h1>
-  <br>
-  <br>
-<form (ngSubmit)="ok()" class="example-form">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label> הכנס שם פרטי</mat-label>
-    <input matInput placeholder="שם פרטי" >
-  </mat-form-field>
-</form>
-
-  <form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label> הכנס שם משפחה</mat-label>
-      <input matInput placeholder="שם משפחה" >
-    </mat-form-field>
-  </form>
-
-<form  class="example-form">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>הכנס מספר טלפון</mat-label>
-    <span matPrefix>&nbsp;</span>
-    <input type="tel" matInput placeholder=" ">
-    <mat-icon matSuffix></mat-icon>
-  </mat-form-field>
-</form>
-<form class="example-form">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>הכנס סיסמא</mat-label>
-    <span matPrefix> &nbsp;</span>
-    <input type="password" matInput placeholder=" ">
-    <mat-icon matSuffix></mat-icon>
-  </mat-form-field>
-</form>
-<form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>דוא"ל</mat-label>
-      <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-             placeholder="Ex. pat@example.com">
-      <mat-hint></mat-hint>
-      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-        אנא הכנס כתובת דואר אלקטרוני נכונה   
-       </mat-error>
-      <mat-error *ngIf="emailFormControl.hasError('required')">
-        Email is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-  </form>
-  <button  class="button1">הירשם</button><br><br>
-  
 </div>
 
-<div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.5045688450246!2d35.07352948513541!3d32.83188968095547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151db73d36dfbf45%3A0xc527637dff362b62!2z15nXkdeg15QgNSwg16fXqNeZ16og157Xldem16fXmdef!5e0!3m2!1siw!2sil!4v1651843262648!5m2!1siw!2sil" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+<div class="d-flex justify-content-evenly m-5">
+  <address>
+    חברת יהודה פינקו בנין ופיתוח<br>
+    כתובת: יבנה 5 מיקוד: 26382<br>
+    קרית מוצקין<br>
+    מספר טלפון:<br>
+    04-8704313 פקס: 04-8717360<br>
+  </address>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.5045688450246!2d35.07352948513541!3d32.83188968095547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151db73d36dfbf45%3A0xc527637dff362b62!2z15nXkdeg15QgNSwg16fXqNeZ16og157Xldem16fXmdef!5e0!3m2!1siw!2sil!4v1651843262648!5m2!1siw!2sil"
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>

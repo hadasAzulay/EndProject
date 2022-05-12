@@ -1,1 +1,6 @@
-<p>projects-in-process works! פרוקיטים בתהליך בהרשאת מנהל </p>
+<h2>פרוקיטים בתהליך בהרשאת מנהל</h2>
+<ul>
+    <li *ngFor="let p of projects">
+        <a class="nav-link" [routerLink]="['./',p.ProjectId]">פרויקט {{p.ProjectId}} - {{p.ProjectName}}</a>
+    </li>
+</ul>

@@ -1,9 +1,5 @@
-<br>
-  <div class="div1">
-    <button class="b" [routerLink]="['/MarketingProjecs']">פרויקטים בשיווק</button><br><br>
-    <button  class="b" [routerLink]="['/PopulatedProjecs']">פרויקטים מאוכלסים</button><br><br>
-    <button class="b" [routerLink]="['/pricePerOccupant']">מחיר למשתכן</button><br><br>
-  </div>
-  <router-outlet></router-outlet>
-  
-  
+<div class="text-center">
+  <button class="b m-2" [routerLink]="['./marketing']">פרויקטים בשיווק</button>
+  <button class="b m-2" [routerLink]="['./populated']">פרויקטים מאוכלסים</button>
+  <button class="b m-2" [routerLink]="['./price-per-occupant']">מחיר למשתכן</button>
+</div>

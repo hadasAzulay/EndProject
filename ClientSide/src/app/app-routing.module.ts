@@ -8,7 +8,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { MarketingProjecsComponent } from './marketing-projecs/marketing-projecs.component';
 import { PopulatedProjecsComponent } from './populated-projecs/populated-projecs.component';
 import { PricePerOccupantComponent } from './price-per-occupant/price-per-occupant.component';
-import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PersonalProjectComponent } from './personal-project/personal-project.component';
 import { PersonalProgressScheduleComponent } from './personal-progress-schedule/personal-progress-schedule.component';
@@ -24,40 +23,53 @@ import { TrackingLogComponent } from './tracking-log/tracking-log.component';
 import { CalculationTableComponent } from './calculation-table/calculation-table.component';
 import { ListOfTenantsComponent } from './list-of-tenants/list-of-tenants.component';
 import { ProgressScheduleComponent } from './progress-schedule/progress-schedule.component';
-
-
+import { ProjectsInProcessComponent } from './projects-in-process/projects-in-process.component';
+import { ManagerGuard } from './guards/manager.guard';
 
 
 const routes: Routes = [
-  { path:'manager',component:MainManagerComponent },
-  { path:'',component:HomeComponent },
-  { path:'app',component:HomeComponent },
-  { path:'log-in',component:LogInComponent},
-  { path:'projects',component:ProjectsComponent },
-  { path:'connection',component:ConnectionComponent },
-  { path:'about',component:AboutUsComponent },
-  { path:'MarketingProjecs',component:MarketingProjecsComponent },
-  { path:'PopulatedProjecs',component:PopulatedProjecsComponent },
-  { path:'pricePerOccupant',component:PricePerOccupantComponent },
-  { path:'personal-project' ,component:PersonalProjectComponent },
-  { path:'Personal-progressSchedule' ,component:PersonalProgressScheduleComponent },
-  { path:'anagement-notices' ,component:ManagementNoticesComponent },
-  { path:'YearChecked' ,component:YearCheckedComponent },
-  { path:'Personal-File' ,component:PersonalFileComponent },
-  { path:'Personal-projects' ,component:PersonalProjectsComponent },
-  { path:'ProjProcManaj' ,component:ProjProcManajComponent },
-  { path:'Contractors' ,component:ContractorsComponent },
-  { path:'Suppliers' ,component:SuppliersComponent },
-  { path:'Documents' ,component:DocumentsComponent },
-  { path:'TrackingLog' ,component:TrackingLogComponent },
-  { path:'CalculationTable' ,component:  CalculationTableComponent},
-  { path:'ListOfTenants' ,component:  ListOfTenantsComponent},
-  { path:'ProgressSchedule' ,component: ProgressScheduleComponent},
-
-
-
-
-  
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'log-in', component: LogInComponent },
+  { path: 'register', redirectTo: 'connection', pathMatch: 'full' },
+  {
+    path: 'projects', children: [
+      { path: '', component: ProjectsComponent },
+      { path: 'marketing', component: MarketingProjecsComponent },
+      { path: 'populated', component: PopulatedProjecsComponent },
+      { path: 'price-per-occupant', component: PricePerOccupantComponent },
+    ]
+  },
+  { path: 'connection', component: ConnectionComponent },
+  { path: 'about', component: AboutUsComponent },
+  { path: 'personal-project', component: PersonalProjectComponent },
+  { path: 'Personal-progressSchedule', component: PersonalProgressScheduleComponent },
+  { path: 'anagement-notices', component: ManagementNoticesComponent },
+  { path: 'YearChecked', component: YearCheckedComponent },
+  { path: 'Personal-File', component: PersonalFileComponent },
+  { path: 'Personal-projects', component: PersonalProjectsComponent },
+  {
+    path: 'manager', children: [
+      { path: '', component: MainManagerComponent, canActivate: [ManagerGuard] },
+      {
+        path: 'projects', children: [
+          { path: '', component: ProjectsInProcessComponent, canActivate: [ManagerGuard] },
+          {
+            path: ':project', children: [
+              { path: '', component: ProjProcManajComponent, canActivate: [ManagerGuard] },
+              { path: 'tracking-log', component: TrackingLogComponent, canActivate: [ManagerGuard] },
+              { path: 'calculation-table', component: CalculationTableComponent, canActivate: [ManagerGuard] },
+              { path: 'teanants-list', component: ListOfTenantsComponent, canActivate: [ManagerGuard] },
+              { path: 'progress-schedule', component: ProgressScheduleComponent, canActivate: [ManagerGuard] },
+            ]
+          }
+        ]
+      },
+      { path: 'contractors', component: ContractorsComponent, canActivate: [ManagerGuard] },
+      { path: 'suppliers', component: SuppliersComponent, canActivate: [ManagerGuard] },
+      { path: 'documents', component: DocumentsComponent, canActivate: [ManagerGuard] }
+    ]
+  },
 ];
 
 @NgModule({

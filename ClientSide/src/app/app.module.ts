@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainManagerComponent } from './main-manager/main-manager.component';
@@ -18,8 +17,8 @@ import { PopulatedProjecsComponent } from './populated-projecs/populated-projecs
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import {MatInputModule} from '@angular/material/input';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 import { PersonalProjectComponent } from './personal-project/personal-project.component';
 import { PersonalProgressScheduleComponent } from './personal-progress-schedule/personal-progress-schedule.component';
 import { ManagementNoticesComponent } from './management-notices/management-notices.component';
@@ -35,9 +34,10 @@ import { TrackingLogComponent } from './tracking-log/tracking-log.component';
 import { CalculationTableComponent } from './calculation-table/calculation-table.component';
 import { ListOfTenantsComponent } from './list-of-tenants/list-of-tenants.component';
 import { ProgressScheduleComponent } from './progress-schedule/progress-schedule.component';
-import {MatTableModule} from '@angular/material/table';
-import{HttpClientModule} from '@angular/common/http'
+import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http'
 import { PeopleService } from './services/people.service';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -72,7 +72,7 @@ import { PeopleService } from './services/people.service';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([ ]),
+    RouterModule,
     BrowserAnimationsModule,
     MatSliderModule,
     FormsModule,
@@ -81,7 +81,7 @@ import { PeopleService } from './services/people.service';
     MatMenuModule,
     MatTableModule,
     HttpClientModule,
-
+    MatButtonModule
   ],
   providers: [PeopleService],
   bootstrap: [AppComponent]

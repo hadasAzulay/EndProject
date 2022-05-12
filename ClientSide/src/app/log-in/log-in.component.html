@@ -1,79 +1,36 @@
-<!--<div>
-<h2 class="p1">היכנס / הירשם</h2><br>
-<span class="span"><br>
+<section>
+	<div class="container-fluid">
+		<h2 class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">כניסה</h2>
 
-<form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label> הכנס שם משמש</mat-label>
-      <input matInput placeholder="שם משמש" >
-    </mat-form-field>
-  
-   
-  </form>
-  <form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>הכנס סיסמא</mat-label>
-      <span matPrefix> &nbsp;</span>
-      <input type="password" matInput placeholder=" ">
-      <mat-icon matSuffix></mat-icon>
-    </mat-form-field>
-  </form>
-  
-        <pre></pre><br>
-        <div class="d" >
-            <label for="Password">הכנס סיסמא</label><br>
-            <input type="text" name="Password" >
-        </div>
-        <pre></pre><br> 
-     <button  [routerLink]="['/personal-project']"class="button1">התחבר</button><br><br>
-     <button  [routerLink]="['']"class="button1">שכחת את הסיסמא?</button><br><br>
+		<div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+				<form>
 
+					<!-- Email input -->
+					<div class="form-outline mb-4">
+						<input type="email" id="mail" class="form-control form-control-lg"
+							placeholder="הכנס כתובת אימייל תקינה" />
+						<label class="form-label" for="mail">כתובת אימייל</label>
+					</div>
 
-     <button class="button2" [routerLink]="['/connection']">אם אינך רשום למערכת לחץ כאן</button><br><br>
-</span>
+					<!-- Password input -->
+					<div class="form-outline mb-3">
+						<input type="password" id="pwd" class="form-control form-control-lg" placeholder="הכנס סיסמה" />
+						<label class="form-label" for="pwd">סיסמה</label>
+					</div>
+					<div>
+						<a href="#!" class="text-body">שכחת סיסמה?</a>
+					</div>
 
-</div>
------
-	<br> 
-	<br>
-	<form (ngSubmit)="ok()">
- <div class="login-wrap">
-	<div class="login-html">
-		
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">אזור אישי </label>
-		<input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">?שכחת סיסמא </label>
-		
-		<div class="login-form">
-			<div class="sign-in-htm">
-				<div class="group">
-					<label for="user" class="label">שם משתמש או מייל</label>
-					
-					<input id="user" type="text" class="input">
-				</div>
-				
-				<div class="group">
-					<label for="pass" class="label">סיסמא</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<input  type="submit" class="button" value=" התחבר">
-				</div>
-				<div class="hr"></div>
-			</div>
-			<div class="for-pwd-htm">
-				<div class="group">
-					<label for="user" class="label">שם משתמש או מייל</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<input type="submit" class="button" value="אפס את הסיסמה">
-				</div>
-				<div class="hr"></div>
+					<div class="text-center text-lg-start mt-4 pt-2">
+						<button type="button" class="btn btn-secondary btn-lg"
+							style="padding-left: 2.5rem; padding-right: 2.5rem;" (ngSubmit)="login()">כניסה</button>
+						<p class="fw-bold mt-2 pt-1 mb-0">אינך רשום עדין? <a [routerLink]="['/register']"
+								class="link-danger">הרשמה</a></p>
+					</div>
+
+				</form>
 			</div>
 		</div>
 	</div>
-</div>
-</form>
--->
-<h1>hello</h1>
-	<form (ngSubmit)="ok()"></form>
+</section>

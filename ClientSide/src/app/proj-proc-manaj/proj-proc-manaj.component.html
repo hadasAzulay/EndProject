@@ -1,8 +1,7 @@
-<p>proj-proc-manaj works!</p>
-
-
-
-<button  [routerLink]="['/TrackingLog']">יומן מעקב</button><br><br>
- <button  [routerLink]="['/CalculationTable']">טבלת חישובים</button><br><br>
- <button  [routerLink]="['/ListOfTenants']"> רשימת דיירם </button><br><br>
- <button  [routerLink]="['/ProgressSchedule']"> לו"ז התקדמות</button><br><br>
+<h3 class="text-center">פרויקט {{projId}} בתהליך</h3>
+<nav class="d-flex flex-column mx-auto w-25">
+    <button class="py-2 px-3 m-2" [routerLink]="['./tracking-log']">יומן מעקב</button>
+    <button class="py-2 px-3 m-2" [routerLink]="['./calculation-table']">טבלת חישובים</button>
+    <button class="py-2 px-3 m-2" [routerLink]="['./teanants-list']">רשימת דיירים</button>
+    <button class="py-2 px-3 m-2" [routerLink]="['./progress-schedule']">לו"ז התקדמות</button>
+</nav>
