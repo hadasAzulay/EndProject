@@ -25,13 +25,15 @@ import { ListOfTenantsComponent } from './list-of-tenants/list-of-tenants.compon
 import { ProgressScheduleComponent } from './progress-schedule/progress-schedule.component';
 import { ProjectsInProcessComponent } from './projects-in-process/projects-in-process.component';
 import { ManagerGuard } from './guards/manager.guard';
+import { RegisterComponent } from './register/register.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'log-in', component: LogInComponent },
-  { path: 'register', redirectTo: 'connection', pathMatch: 'full' },
+  { path: 'register', component: RegisterComponent },
   {
     path: 'projects', children: [
       { path: '', component: ProjectsComponent },
@@ -70,6 +72,7 @@ const routes: Routes = [
       { path: 'documents', component: DocumentsComponent, canActivate: [ManagerGuard] }
     ]
   },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

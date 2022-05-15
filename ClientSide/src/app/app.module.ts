@@ -38,6 +38,8 @@ import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http'
 import { PeopleService } from './services/people.service';
 import { MatButtonModule } from '@angular/material/button';
+import { RegisterComponent } from './register/register.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -67,6 +69,8 @@ import { MatButtonModule } from '@angular/material/button';
     CalculationTableComponent,
     ListOfTenantsComponent,
     ProgressScheduleComponent,
+    RegisterComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
