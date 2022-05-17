@@ -6,13 +6,13 @@ import { People } from '../classes/people';
 })
 export class StateService {
 
-  currentUserValue: People = new People(1, 'יהודה', 'פינקו', '0501234567', 's@sample.com', '123456');
+  currentUser: People = new People(1, 'יהודה', 'פינקו', '0501234567', 's@sample.com', '123456');
 
   constructor() { }
 
   isManager() {
-    if (this.currentUserValue)
-      return this.currentUserValue;
+    if (this.currentUser)
+      return this.currentUser;
     return false;
   }
 }

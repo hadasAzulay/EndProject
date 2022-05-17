@@ -3,30 +3,48 @@
 		<h2 class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">כניסה</h2>
 
 		<div class="row d-flex justify-content-center align-items-center h-100">
-			<div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-				<form>
+			<div class="col-md-8 col-lg-6 col-xl-4">
+				<form [formGroup]="loginForm" (ngSubmit)="login()">
+					<p *ngIf="notFound">לא מצאנו משתמש עם פרטים אלו, נסה שוב </p>
 
 					<!-- Email input -->
 					<div class="form-outline mb-4">
-						<input type="email" id="mail" class="form-control form-control-lg"
-							placeholder="הכנס כתובת אימייל תקינה" />
-						<label class="form-label" for="mail">כתובת אימייל</label>
+						<input type="email" id="mail" formControlName="emailFormControl"
+							class="form-control form-control-lg" placeholder="הכנס כתובת אימייל" />
+						<label class="form-label" for="mail">כתובת מייל</label>
+						<div *ngIf="emailFormControl.touched && emailFormControl.errors">
+							<mat-error *ngIf="emailFormControl.errors.email && !emailFormControl.errors.required">
+								אנא הכנס כתובת מייל תקינה
+							</mat-error>
+							<mat-error *ngIf="emailFormControl.errors.required">
+								כתובת מייל <strong>נדרשת</strong>
+							</mat-error>
+						</div>
 					</div>
 
 					<!-- Password input -->
 					<div class="form-outline mb-3">
-						<input type="password" id="pwd" class="form-control form-control-lg" placeholder="הכנס סיסמה" />
+						<input type="password" id="pwd" formControlName="pswFormControl"
+							class="form-control form-control-lg" placeholder="הכנס סיסמה" />
 						<label class="form-label" for="pwd">סיסמה</label>
+						<div *ngIf="pswFormControl.touched && pswFormControl.errors">
+							<mat-error *ngIf="pswFormControl.errors.minlength && !pswFormControl.errors.required">
+								אנא הכנס סיסמה בעלת 8 תוים לפחות
+							</mat-error>
+							<mat-error *ngIf="pswFormControl.errors.required">
+								אנא הכנס סיסמה
+							</mat-error>
+						</div>
 					</div>
-					<div>
-						<a href="#!" class="text-body">שכחת סיסמה?</a>
+					<div *ngIf="notFound">
+						<a href="mailto:app@comp.co.il?subject=שכחתי סיסמה" class="text-body">שכחת סיסמה?</a>
 					</div>
 
 					<div class="text-center text-lg-start mt-4 pt-2">
-						<button type="button" class="btn btn-secondary btn-lg"
-							style="padding-left: 2.5rem; padding-right: 2.5rem;" (ngSubmit)="login()">כניסה</button>
-						<p class="fw-bold mt-2 pt-1 mb-0">אינך רשום עדין? <a [routerLink]="['/register']"
-								class="link-danger">הרשמה</a></p>
+						<button type="submit" class="btn btn-secondary btn-lg"
+							style="padding-left: 2.5rem; padding-right: 2.5rem;">כניסה</button>
+						<p *ngIf="notFound" class="fw-bold mt-2 pt-1 mb-0">אינך רשום עדין? <a
+								[routerLink]="['/register']" class="link-danger">הרשמה</a></p>
 					</div>
 
 				</form>

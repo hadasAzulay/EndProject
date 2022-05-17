@@ -32,7 +32,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'log-in', component: LogInComponent },
+  { path: 'login', component: LogInComponent },
   { path: 'register', component: RegisterComponent },
   {
     path: 'projects', children: [

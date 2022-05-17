@@ -1,18 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormControl, Validators } from '@angular/forms';
 import { People } from '../classes/people';
 import { PeopleService } from '../services/people.service';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 
-// import { Router } from '@angular/router';
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -20,22 +12,33 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 
 export class LogInComponent implements OnInit {
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  checkoutForm: FormGroup;
-  person: People;
 
-  constructor(public pSer: PeopleService, public router: Router) { }
+  loginForm: FormGroup;
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  pswFormControl = new FormControl('', [Validators.required, Validators.minLength(6)])
+  person: People;
+  notFound: boolean = false;
+
+  constructor(public peopleSvc: PeopleService, public router: Router) { }
 
   ngOnInit(): void {
+    this.loginForm = new FormGroup({
+      'emailFormControl': this.emailFormControl,
+      'pswFormControl': this.pswFormControl
+    });
   }
 
   login() {
-    this.pSer.getByMailAndPas(this.person.Email, this.person.PsWord).subscribe(
+    this.peopleSvc.getByMailAndPas(this.emailFormControl.value, this.pswFormControl.value).subscribe(
       data => {
-        this.pSer.people = data;
+        this.peopleSvc.thisPerson = data;
+        //if(isManager())
         this.router.navigate(['/personal-project']);
       },
-      err => { alert("no") }
+      err => {
+        console.log("not found user");
+        this.notFound = true;
+      }
     )
   }
 }
