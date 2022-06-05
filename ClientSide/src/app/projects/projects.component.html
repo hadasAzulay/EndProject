@@ -1,5 +1,11 @@
-<div class="text-center">
-  <button class="b m-2" [routerLink]="['./marketing']">פרויקטים בשיווק</button>
-  <button class="b m-2" [routerLink]="['./populated']">פרויקטים מאוכלסים</button>
-  <button class="b m-2" [routerLink]="['./price-per-occupant']">מחיר למשתכן</button>
+<div class="row">
+  <div class="col-4 d-flex align-items-center justify-content-center market">
+    <button class="myBtn" [routerLink]="['./marketing']">פרויקטים בשיווק</button>
+  </div>
+  <div class="col-4 d-flex align-items-center justify-content-center populated">
+    <button class="myBtn" [routerLink]="['./populated']">פרויקטים מאוכלסים</button>
+  </div>
+  <div class="col-4 d-flex align-items-center justify-content-center priced">
+    <button class="myBtn" [routerLink]="['./price-per-occupant']">מחיר למשתכן</button>
+  </div>
 </div>

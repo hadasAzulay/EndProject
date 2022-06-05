@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { People } from '../classes/people';
 import { PeopleService } from '../services/people.service';
+import { StateService } from '../services/state.service';
 
 @Component({
   selector: 'app-log-in',
@@ -15,11 +15,12 @@ export class LogInComponent implements OnInit {
 
   loginForm: FormGroup;
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  pswFormControl = new FormControl('', [Validators.required, Validators.minLength(6)])
+  minLenPhone: number = 6;
+  pswFormControl = new FormControl('', [Validators.required, Validators.minLength(this.minLenPhone)])
   person: People;
   notFound: boolean = false;
 
-  constructor(public peopleSvc: PeopleService, public router: Router) { }
+  constructor(public peopleSvc: PeopleService, public state:StateService, public router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -31,13 +32,24 @@ export class LogInComponent implements OnInit {
   login() {
     this.peopleSvc.getByMailAndPas(this.emailFormControl.value, this.pswFormControl.value).subscribe(
       data => {
-        this.peopleSvc.thisPerson = data;
-        //if(isManager())
-        this.router.navigate(['/personal-project']);
+        this.state.currentUser.next(data);
+        this.peopleSvc.isManager(data.PersonId).subscribe(ismng=> {
+          if(ismng){
+            this.state.isCurrentManager.next(true);
+            this.router.navigate(['/manager/projects']);
+          }
+          else {
+            this.state.isCurrentManager.next(false);
+            this.router.navigate(['/personal-project']);
+          }
+        })
       },
       err => {
+        //if(err == not fond user)
         console.log("not found user");
-        this.notFound = true;
+        this.notFound = true;       
+        //if(err == no server)
+        //console.log("no server");
       }
     )
   }

@@ -9,7 +9,6 @@ import { People } from '../classes/people';
 export class PeopleService {
   //נגדיר משתנה עם הכתובת של השרת
   url: string = 'https://localhost:44371/api/Person/';
-  thisPerson: People;
   //בסרוויס ניצור פונקציות מקבילות לפונקציות בקונטרולר
   constructor(private http: HttpClient) { }
   //פונקציה שמבצעת קריאה לפונקציה בשרת ששולפת את כל האנשים
@@ -20,9 +19,12 @@ export class PeopleService {
     return this.http.get<Array<People>>(this.url + 'GetAllPerson')
   }
   getByMailAndPas(mail: string, password: string): Observable<People> {
-    return this.http.get<People>(this.url + 'getPersonByEmailAndPas/' + mail +'/'+ password)
+    return this.http.get<People>(this.url + 'getPersonByEmailAndPas/' + mail + '/' + password)
   }
-  addPerson(people: People): Observable<Array<People>> {
-    return this.http.put<Array<People>>(this.url + 'putPerson', people)
+  addPerson(people: People): Observable<People> {
+    return this.http.put<People>(this.url + 'putPerson', people)
+  }
+  isManager(id: number) {
+    return this.http.get<boolean>(this.url + 'getIsManager/' + id);
   }
 }

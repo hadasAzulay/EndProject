@@ -1,4 +1,22 @@
-.b {
-    width: 20%;
-    height: 100px;
+.myBtn {
+    width: 150px;
+    height: 50px;
+    margin: auto;
+}
+
+.col-4 {
+    background-size: cover;
+    height: 60vh;
+}
+
+.market {
+    background-image: url(/assets/images/kablan.jpg);
+}
+
+.populated {
+    background-image: url(/assets/images/kablan2.jpg);
+}
+
+.priced {
+    background-image: url(/assets/images/kablan3.jpg);
 }

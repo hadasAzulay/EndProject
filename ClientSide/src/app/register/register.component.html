@@ -19,6 +19,11 @@
                     <input type="text" id="firstName" formControlName="fnameFormControl" placeholder="הכנס שם פרטי"
                       class="form-control" />
                     <label class="form-label" for="firstName">שם פרטי</label>
+                    <div *ngIf="fnameFormControl.touched && fnameFormControl.errors">
+                      <mat-error *ngIf="fnameFormControl.errors.required">
+                        שם פרטי <strong>נדרש</strong>
+                      </mat-error>
+                    </div>
                   </div>
                   <i class="fa fa-user fa-lg ms-3 fa-fw"></i>
                 </div>
@@ -34,11 +39,11 @@
 
                 <div class="d-flex flex-row align-items-center mb-4">
                   <div class="form-outline flex-fill mb-0">
-                    <input type="phone" id="phone" formControlName="phoneFormControl" placeholder="050-1234567"
+                    <input type="phone" id="phone" formControlName="phoneFormControl" placeholder="0501234567"
                       class="form-control" />
                     <label class="form-label" for="phone">טלפון</label>
-                    <div>
-                      <mat-error *ngIf="phoneFormControl.hasError('pattern')">
+                    <div *ngIf="phoneFormControl.touched && phoneFormControl.errors">
+                      <mat-error *ngIf="phoneFormControl.errors.pattern">
                         אנא הכנס מספר טלפון נכון
                       </mat-error>
                     </div>
@@ -69,7 +74,7 @@
                     <label class="form-label" for="psw">סיסמה</label>
                     <div *ngIf="pswFormControl.touched && pswFormControl.errors">
                       <mat-error *ngIf="pswFormControl.errors.minlength && !pswFormControl.errors.required">
-                        אנא הכנס סיסמה בעלת 8 תוים לפחות
+                        אנא הכנס סיסמה בעלת 6 תוים לפחות
                       </mat-error>
                       <mat-error *ngIf="pswFormControl.errors.required">
                         אנא הכנס סיסמה
@@ -81,16 +86,16 @@
 
                 <div class="d-flex flex-row align-items-center mb-4">
                   <div class="form-outline flex-fill mb-0">
-                    <input type="password" formControlName="psw2FormControl" id="psw2" class="form-control" />
+                    <input type="password" formControlName="pswConfirmFormControl" id="psw2" class="form-control" />
                     <label class="form-label" for="psw2">אישור סיסמה</label>
-                    <div *ngIf="psw2FormControl.touched && psw2FormControl.errors">
-                      <mat-error *ngIf="psw2FormControl.errors.minlength && !psw2FormControl.errors.required">
-                        אנא הכנס סיסמה בעלת 8 תוים לפחות
+                    <div *ngIf="pswConfirmFormControl.touched && pswConfirmFormControl.errors">
+                      <mat-error *ngIf="pswConfirmFormControl.errors.minlength &&!registerForm.errors['notSame'] &&  !pswConfirmFormControl.errors.required">
+                        אנא הכנס סיסמה בעלת 6 תוים לפחות
                       </mat-error>
-                      <mat-error *ngIf="psw2FormControl.errors.required">
+                      <mat-error *ngIf="pswConfirmFormControl.errors.required && !registerForm.errors['notSame']">
                         אנא הכנס אישור סיסמה
                       </mat-error>
-                      <mat-error *ngIf="psw2FormControl.errors.suitable">
+                      <mat-error *ngIf="registerForm.errors['notSame'] && pswFormControl.valid">
                         אנא הכנס סיסמה תואמת
                       </mat-error>
                     </div>
@@ -106,7 +111,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                  <button type="submit" class="btn btn-primary btn-lg">הרשם</button>
+                  <button type="submit" class="btn btn-primary btn-lg" [disabled]="registerForm.invalid">הרשם</button>
                 </div>
 
               </form>

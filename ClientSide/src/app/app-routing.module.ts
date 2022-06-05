@@ -46,10 +46,10 @@ const routes: Routes = [
   { path: 'about', component: AboutUsComponent },
   { path: 'personal-project', component: PersonalProjectComponent },
   { path: 'Personal-progressSchedule', component: PersonalProgressScheduleComponent },
-  { path: 'anagement-notices', component: ManagementNoticesComponent },
-  { path: 'YearChecked', component: YearCheckedComponent },
-  { path: 'Personal-File', component: PersonalFileComponent },
-  { path: 'Personal-projects', component: PersonalProjectsComponent },
+  { path: 'management-notices', component: ManagementNoticesComponent },
+  { path: 'year-checked', component: YearCheckedComponent },
+  { path: 'personal-File', component: PersonalFileComponent },
+  { path: 'personal-projects', component: PersonalProjectsComponent },
   {
     path: 'manager', children: [
       { path: '', component: MainManagerComponent, canActivate: [ManagerGuard] },

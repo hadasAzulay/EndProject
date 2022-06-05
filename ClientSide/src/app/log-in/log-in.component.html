@@ -5,7 +5,7 @@
 		<div class="row d-flex justify-content-center align-items-center h-100">
 			<div class="col-md-8 col-lg-6 col-xl-4">
 				<form [formGroup]="loginForm" (ngSubmit)="login()">
-					<p *ngIf="notFound">לא מצאנו משתמש עם פרטים אלו, נסה שוב </p>
+					<p class="fs-5 text-danger" *ngIf="notFound">לא מצאנו משתמש עם פרטים אלו, נסה שוב </p>
 
 					<!-- Email input -->
 					<div class="form-outline mb-4">
@@ -29,7 +29,7 @@
 						<label class="form-label" for="pwd">סיסמה</label>
 						<div *ngIf="pswFormControl.touched && pswFormControl.errors">
 							<mat-error *ngIf="pswFormControl.errors.minlength && !pswFormControl.errors.required">
-								אנא הכנס סיסמה בעלת 8 תוים לפחות
+								אנא הכנס סיסמה בעלת {{minLenPhone}} תוים לפחות
 							</mat-error>
 							<mat-error *ngIf="pswFormControl.errors.required">
 								אנא הכנס סיסמה
@@ -41,7 +41,7 @@
 					</div>
 
 					<div class="text-center text-lg-start mt-4 pt-2">
-						<button type="submit" class="btn btn-secondary btn-lg"
+						<button type="submit" class="btn btn-secondary btn-lg" [disabled]="loginForm.invalid"
 							style="padding-left: 2.5rem; padding-right: 2.5rem;">כניסה</button>
 						<p *ngIf="notFound" class="fw-bold mt-2 pt-1 mb-0">אינך רשום עדין? <a
 								[routerLink]="['/register']" class="link-danger">הרשמה</a></p>

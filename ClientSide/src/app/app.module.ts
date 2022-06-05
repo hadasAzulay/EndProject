@@ -75,11 +75,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     RouterModule,
     BrowserAnimationsModule,
     MatSliderModule,
     FormsModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatMenuModule,
