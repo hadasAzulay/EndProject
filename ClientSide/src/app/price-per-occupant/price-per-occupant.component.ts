@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { Projects } from '../classes/projects';
 
 @Component({
   selector: 'app-price-per-occupant',
@@ -7,6 +8,7 @@ import { Component, OnInit, Output } from '@angular/core';
 })
 export class PricePerOccupantComponent implements OnInit {
 
+  projects: Projects[];
   
   constructor() { }
 

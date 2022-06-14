@@ -5,16 +5,13 @@
         <div class="card-body p-md-5">
           <div class="row justify-content-center">
 
-            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center overflow-hidden">
-              <img src="assets\images\p5.jpg" class="h-100" alt="Sample image">
-            </div>
-
             <div class="col-md-10 col-lg-6 col-xl-5">
               <h2 class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">הצטרף אלינו</h2>
 
-              <form class="mx-1 mx-md-4" [formGroup]="registerForm" (ngSubmit)="register()">
+              <form class="mx-1 mx-md-4" [formGroup]="registerForm" (ngSubmit)="register(content)">
 
                 <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fa fa-user fa-lg ms-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
                     <input type="text" id="firstName" formControlName="fnameFormControl" placeholder="הכנס שם פרטי"
                       class="form-control" />
@@ -25,19 +22,19 @@
                       </mat-error>
                     </div>
                   </div>
-                  <i class="fa fa-user fa-lg ms-3 fa-fw"></i>
                 </div>
 
                 <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fa fa-user-plus fa-lg ms-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
                     <input type="text" id="lastName" formControlName="lnameFormControl" placeholder="הכנס שם משפחה"
                       class="form-control" />
                     <label class="form-label" for="lastName">שם משפחה</label>
                   </div>
-                  <i class="fa fa-user-plus fa-lg ms-3 fa-fw"></i>
                 </div>
 
                 <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fa fa-phone fa-lg ms-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
                     <input type="phone" id="phone" formControlName="phoneFormControl" placeholder="0501234567"
                       class="form-control" />
@@ -48,10 +45,10 @@
                       </mat-error>
                     </div>
                   </div>
-                  <i class="fa fa-phone fa-lg ms-3 fa-fw"></i>
                 </div>
 
                 <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fa fa-envelope fa-lg ms-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
                     <input type="email" id="email" formControlName="emailFormControl" placeholder="pat@example.com"
                       class="form-control" />
@@ -65,10 +62,10 @@
                       </mat-error>
                     </div>
                   </div>
-                  <i class="fa fa-envelope fa-lg ms-3 fa-fw"></i>
                 </div>
 
                 <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fa fa-lock fa-lg ms-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
                     <input type="password" id="psw" formControlName="pswFormControl" class="form-control" />
                     <label class="form-label" for="psw">סיסמה</label>
@@ -81,34 +78,44 @@
                       </mat-error>
                     </div>
                   </div>
-                  <i class="fa fa-lock fa-lg ms-3 fa-fw"></i>
                 </div>
 
                 <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fa fa-key fa-lg ms-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
                     <input type="password" formControlName="pswConfirmFormControl" id="psw2" class="form-control" />
                     <label class="form-label" for="psw2">אישור סיסמה</label>
                     <div *ngIf="pswConfirmFormControl.touched && pswConfirmFormControl.errors">
-                      <mat-error *ngIf="pswConfirmFormControl.errors.minlength &&!registerForm.errors['notSame'] &&  !pswConfirmFormControl.errors.required">
+                      <mat-error *ngIf="pswConfirmFormControl.errors.minlength">
                         אנא הכנס סיסמה בעלת 6 תוים לפחות
                       </mat-error>
-                      <mat-error *ngIf="pswConfirmFormControl.errors.required && !registerForm.errors['notSame']">
+                      <mat-error *ngIf="pswConfirmFormControl.errors.required">
                         אנא הכנס אישור סיסמה
                       </mat-error>
-                      <mat-error *ngIf="registerForm.errors['notSame'] && pswFormControl.valid">
+                      <mat-error *ngIf="pswFormControl.valid && pswConfirmFormControl.errors?.passwordMismatch">
                         אנא הכנס סיסמה תואמת
                       </mat-error>
                     </div>
                   </div>
-                  <i class="fa fa-key fa-lg ms-3 fa-fw"></i>
                 </div>
 
-                <div class="form-check d-flex justify-content-center mb-5">
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fa fa-building-o fa-lg ms-3 fa-fw"></i>
+                  <div class="form-outline flex-fill mb-0">
+                    <select formControlName="projFormControl" id="proj" class="form-control">
+                      <option selected>בחר פרוייקט בו תרצה להתעניין</option>
+                      <option *ngFor="let p of projects" [value]="">{{p}}</option>
+                    </select>
+                    <label class="form-label" for="proj">פרויקט</label>
+                  </div>
+                </div>
+
+                <!--div class="form-check d-flex justify-content-center mb-5">
                   <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
                   <label class="form-check-label" for="form2Example3">
                     אני מסכימ/ה עם ה <a href="#!">תקנון וכללי השימוש</a>
                   </label>
-                </div>
+                </div-->
 
                 <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                   <button type="submit" class="btn btn-primary btn-lg" [disabled]="registerForm.invalid">הרשם</button>
@@ -117,9 +124,25 @@
               </form>
 
             </div>
+
+            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center overflow-hidden">
+              <img src="assets\images\p5.jpg" class="h-100" alt="Sample image">
+            </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      <img src="favicon.ico" class="rounded ms-2" alt="לוגו אתר">
+      <strong class="ms-auto">יהודה פינקו - בנין ופיתוח</strong>
+    </h4>
+  </div>
+  <div class="modal-body display-6">
+    הרשמתך התקבלה בהצלחה
+  </div>
+</ng-template>

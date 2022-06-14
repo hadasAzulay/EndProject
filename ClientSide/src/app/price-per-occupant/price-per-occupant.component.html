@@ -1,1 +1,6 @@
-<p>price-per-occupant works!</p>
+<a [routerLink]="['/projects']"><span class="material-icons fs-1" title="חזרה לפרויקטים">arrow_right_alt</span></a>
+<ul>
+    <li *ngFor="let p of projects">
+        <button [routerLink]="['/projects', p.ProjectId]">{{p.ProjectName}}</button>
+    </li>
+</ul>
